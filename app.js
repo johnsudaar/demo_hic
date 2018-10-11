@@ -27,4 +27,14 @@ app.post('/', (req, res) => {
   res.send(`Value ${value} saved!`)
 })
 
+app.get('/', (req, res) => {
+  influxClient.query(`
+    select * from hic_demo
+  `).then(result => {
+    res.json(result)
+  }).catch(err => {
+    res.status(500).send(err.stack)
+  })
+})
+
 app.listen(port, () => console.log(`Listening on :${port}`))
