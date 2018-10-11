@@ -16,7 +16,7 @@ const influxClient = new Influx.InfluxDB({
 const app = express()
 
 app.post('/', (req, res) => {
-  const value = req.params.value || 10
+  const value = parseFloat(req.query.value || "10")
   influxClient.writePoints([
     {
       measurement: "hic_demo",
