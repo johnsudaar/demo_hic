@@ -2,7 +2,7 @@ const mosca = require('mosca')
 const Influx = require('influx')
 const URL = require('url').URL
 
-const port = process.env.PORT || 3000
+const port = parseInt(process.env.PORT || "3000")
 const influxURL = new URL(process.env.INFLUX_URL || "influxdb://hic:hic@172.17.0.1:8086/test")
 
 const influxClient = new Influx.InfluxDB({
