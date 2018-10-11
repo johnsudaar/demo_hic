@@ -6,9 +6,9 @@ const port = process.env.PORT || 3000
 const influxURL = new URL(process.env.INFLUX_URL || "influxdb://hic:hic@172.17.0.1:8086/test")
 
 const influxClient = new Influx.InfluxDB({
-  host: influxURL.host,
+  host: influxURL.hostname,
   port: influxURL.port,
-  user: influxURL.username,
+  username: influxURL.username,
   password: influxURL.password,
   database: influxURL.pathname.substr(1),
 })
