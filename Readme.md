@@ -2,18 +2,18 @@
 
 This boilerplate is here to help you bootstrap a minimal project using Node.JS/Express, InfluxDB and Mosca to store and retrieve time based measurements.
 
-## What does this boiler plate do?
+## What does this boilerplate do?
 
 It provide an HTTP server that have two endpoint:
 
 `GET /`: List all points saved
 
-`POST /?value=<number>`: Save `<number>` in a Timeseries database (here InfluxDB)
+`POST /?value=<number>`: Save `<number>` in a time series database (here InfluxDB)
 
 The HTTP server source can be found in the `app.js` file.
 
 
-It also provide a MQTT that will store any number sent to him in this Timeseries database.
+It also provide a MQTT server that will store any number sent to him in this time series database.
 
 The MQTT server source can be found in the `mqtt.js` file.
 
@@ -34,10 +34,12 @@ PORT=3001 INFLUX_URL=REPLACE_ME yarn run start
 And the MQTT server by running:
 
 ```bash
-PORT=3002 INFLUX_URL=REPALCE_ME yarn run mqtt
+PORT=3002 INFLUX_URL=REPLACE_ME yarn run mqtt
 ```
 
-## Deploying it on scalingo
+Replace `REPLACE_ME` string with a valid URL pointing to an InfluxDB server.
+
+## Deploying it on Scalingo
 
 To deploy it on Scalingo, run the following commands:
 

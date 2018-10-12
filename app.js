@@ -5,7 +5,7 @@ const URL = require('url').URL
 const port = process.env.PORT || 3000
 const influxURL = new URL(process.env.INFLUX_URL || "influxdb://hic:hic@172.17.0.1:8086/test")
 
-// Build the Influx Client based on the INFLUX_URL passed in the process environment
+// Build the InfluxDB client based on the INFLUX_URL given in the process environment.
 //
 // The URL has the following form:
 // influxdb://username:password@host:port/database_name
@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
   // Parse the current value
   const value = parseFloat(req.query.value || "10")
 
-  // Send it to Influx
+  // Send it to InfluxDB
   influxClient.writePoints([
     {
       measurement: "hic_demo",

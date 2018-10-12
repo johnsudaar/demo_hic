@@ -5,11 +5,10 @@ const URL = require('url').URL
 const port = parseInt(process.env.PORT || "3000")
 const influxURL = new URL(process.env.INFLUX_URL || "influxdb://hic:hic@172.17.0.1:8086/test")
 
-// Build the Influx Client based on the INFLUX_URL passed in the process environment
+// Build the InfluxDB client based on the INFLUX_URL given in the process environment.
 //
 // The URL has the following form:
 // influxdb://username:password@host:port/database_name
-
 const influxClient = new Influx.InfluxDB({
   host: influxURL.hostname,
   port: influxURL.port,
@@ -21,8 +20,8 @@ const influxClient = new Influx.InfluxDB({
 let settings = {
   port: port,
   persistence: {
-    // Here we're using in memory presistency.
-    // A real app should use a different backend if it need a cluster, see:
+    // Here we're using in-memory presistency.
+    // A real app should use a different backend if it needs a cluster, see:
     // https://github.com/mcollina/mosca/wiki#does-it-scale
     factory: mosca.persistence.Memory,
   }
