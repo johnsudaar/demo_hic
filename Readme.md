@@ -1,4 +1,4 @@
-# Hacking Industry Camp 2018 - Node.js/InfluxDB/Mosca boilerplate
+# Hacking Industry Camp 2019 - Node.js/InfluxDB/Mosca boilerplate
 
 This boilerplate is here to help you bootstrap a minimal project using Node.JS/Express, InfluxDB and Mosca to store and retrieve time based measurements.
 
