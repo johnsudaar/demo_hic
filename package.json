@@ -5,10 +5,10 @@
   "author": "Jonathan Hurter <john@scalingo.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.16.4",
-    "influx": "^5.0.7",
+    "influx": "^5.0.7"
   }
 }
