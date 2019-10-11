@@ -6,11 +6,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "mqtt": "node mqtt.js"
   },
   "dependencies": {
     "express": "^4.16.4",
     "influx": "^5.0.7",
-    "mosca": "^2.8.3"
   }
 }
